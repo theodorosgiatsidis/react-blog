@@ -1,4 +1,5 @@
 import { useLocation } from "react-router";
+import Footer from "../../Components/footer/Footer";
 import Header from "../../Components/Header/Header";
 import Posts from "../../Components/Posts/Posts";
 import "./home.css";
@@ -11,6 +12,9 @@ function Home() {
       <Header />
       <div className="home">
         <Posts />
+      </div>
+      <div className="footer">
+        <Footer />
       </div>
     </>
   );
