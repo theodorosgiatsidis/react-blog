@@ -13,9 +13,15 @@ function Post(props) {
         <img className="img" src={props.img} alt="" />
         <h1>{props.name}</h1>
         <p className="desc">{props.desc}</p>
-        <p className="userName">{props.userName}</p>
-        <img className="userImg" src={props.userImg} alt="" />
-        <p className="date">{props.date}</p>
+        <div className="user-section">
+          <div className="img-wrapper">
+            <img className="userImg" src={props.userImg} alt="" />
+          </div>
+          <div className="user-details-wrapper">
+            <p className="userName">{props.userName}</p>
+            <p className="date">{props.date}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
