@@ -3,10 +3,10 @@
 }
 
 .writeImg {
-  width: 700px;
-  height: 300px;
+  width: 100%;
+  height: 500px;
   border-radius: 10px;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .writeForm {
@@ -14,7 +14,6 @@
 }
 
 .writeFormGroup {
-  margin-left: 150px;
   display: flex;
   align-items: center;
 }
@@ -28,7 +27,7 @@
   justify-content: center;
   border-radius: 50%;
   font-size: 20px;
-  color: gray;
+  color: black;
   cursor: pointer;
 }
 
@@ -58,4 +57,9 @@
   border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
+}
+.writeInput.writeText {
+  margin: 10px;
+  width: 855px;
+  height: 45px;
 }
