@@ -1,7 +1,7 @@
 import { useLocation } from "react-router";
 import Footer from "../../Components/footer/Footer";
 import Header from "../../Components/Header/Header";
-import Posts from "../../Components/Posts/Posts";
+import Pagination from "../../Components/paginatedpost/PaginatedPosts";
 import "./home.css";
 
 function Home() {
@@ -11,7 +11,7 @@ function Home() {
     <>
       <Header />
       <div className="home">
-        <Posts />
+        <Pagination />
       </div>
       <div className="footer">
         <Footer />
