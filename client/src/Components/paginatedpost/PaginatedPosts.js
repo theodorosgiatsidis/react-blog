@@ -4,7 +4,7 @@ import ReactPaginate from "react-paginate";
 import Posts from "../Posts/Posts";
 import "./paginatedPosts.css";
 
-function PaginationPost() {
+function PaginatedPost() {
   const state = useContext(StoreContext);
   const [posts, setPosts] = useState(null);
   const [pageCount, setPageCount] = useState(0);
@@ -45,4 +45,4 @@ function PaginationPost() {
   );
 }
 
-export default PaginationPost;
+export default PaginatedPost;
