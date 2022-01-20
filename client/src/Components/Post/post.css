@@ -61,3 +61,8 @@
 .date {
   margin: 0;
 }
+
+.userName {
+  color: yellowgreen;
+  margin-right: 10px, 10px;
+}

@@ -1,24 +1,58 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { StoreContext } from "../../context/store";
+import axios from "axios";
 import "./write.css";
+
 function Write() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [file, setFile] = useState(null);
+  const { user } = useContext(StoreContext);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newPost = {
+      user: user._id,
+      title,
+      description,
+    };
+    if (file) {
+      const data = new FormData();
+      const filename = Date.now() + file.name;
+      data.append("name", filename);
+      data.append("file", file);
+      newPost.picture = filename;
+
+      try {
+        await axios.post("/upload", data);
+      } catch (err) {}
+    }
+    try {
+      await axios.post("/posts", newPost);
+      window.location.replace("/");
+    } catch (err) {}
+  };
+
   return (
     <div className="write">
-      <img
-        className="writeImg"
-        src="https://eskipaper.com/images/images-2.jpg"
-        alt=""
-      />
-      <form className="writeForm">
+      {file && (
+        <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
+      )}
+
+      <form onSubmit={handleSubmit} className="writeForm">
         <div className="writeFormGroup">
-          <label htmlFor="fileInput">
-            <i className=" writeIcon fas fa-plus-square"></i>
-          </label>
-          <input type="file" id="fileInput" style={{ display: "none" }} />
+          <input
+            type="file"
+            id="fileInput"
+            style={{ display: "none" }}
+            onChange={(e) => setFile(e.target.files[0])}
+          />
           <input
             type="text"
             placeholder="Title"
             className="writeInput"
             autoFocus={true}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div className="writeFormGroup">
@@ -26,9 +60,16 @@ function Write() {
             placeholder="Tell your story..."
             type="text"
             className="writeInput writeText"
+            onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
-        <button className="writeSubmit">Publish</button>
+        <label htmlFor="fileInput">
+          <span>Upload...</span>
+          <i className=" writeIcon fas fa-plus-square"></i>
+        </label>
+        <button className="writeSubmit" type="submit">
+          Publish
+        </button>
       </form>
     </div>
   );

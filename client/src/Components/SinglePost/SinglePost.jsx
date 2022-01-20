@@ -11,18 +11,11 @@ function SinglePost() {
           alt=""
         />
       </div>
-      <h1 className="singlePostTitle">
-        Lorem ipsum dolor sit.
-        <div className="singlePostEdit">
-          <i className="singlePostIcon fas fa-edit"></i>
-          <i className="singlePostIcon far fa-trash-alt"></i>
-        </div>
-      </h1>
+      <h1 className="singlePostTitle">Lorem ipsum dolor sit.</h1>
       <div className="singlePostInfo">
         <span className="singlePostAuthor">
           Author : <b>Gkevris</b>
         </span>
-        <span className="singlePostDate">1 hour ago</span>
       </div>
       <p className="singlePostDesc">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Et corrupti

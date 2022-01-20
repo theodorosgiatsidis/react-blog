@@ -22,6 +22,7 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .topIcon {
@@ -45,10 +46,13 @@
   text-decoration: none;
 }
 .topSearchIcon {
-  font-size: 18px;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
   color: #666;
   cursor: pointer;
   margin-left: 15px;
+  margin-top: 10px;
 }
 
 a:link,
